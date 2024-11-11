@@ -43,11 +43,11 @@ function checker() {
 
     }
 
-     emailVerify(email)
+    emailVerify(email)
     checkboxNradio()
     idVerify(ID)
     passVerify(pasword)
-
+    
 }
 
 
