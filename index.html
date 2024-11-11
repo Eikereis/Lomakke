@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        textarea {
+            height: 60px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rekisteröitymislomake</h1>
+    <p>Siirry kentästä toiseen tab-näppäimellä.</p>
+    
+    <form>
+        <label for="kayttajaid">Käyttäjä ID:</label>
+        <input type="text" id="kayttajaid" class="forced" name="kayttajaid">
+    
+        <label for="salasana">Salasana:</label>
+        <input type="text" id="salasana" class="forced" name="salasana">
+    
+        <label for="nimi">Nimi:</label>
+        <input type="text" id="nimi" class="forced" name="nimi">
+    
+        <label for="osoite">Osoite:</label>
+        <input type="text" id="osoite" class="forced" name="osoite">
+    
+        <label for="maa">Maa:</label>
+        <select id="maa" class="forced" name="maa">
+            <option value="">Valitse maa</option>
+            <option>Suomi</option>
+            <option>Belgia</option>
+            <option>Zimbabwe</option>
+            <option>yhdistynyt kuningaskunta</option>
+            <option>muu</option>
+            
+        </select>
+    
+        <label for="postinumero">Postinumero:</label>
+        <input type="text" id="postinumero" class="forced" name="postinumero">
+    
+        <label for="sahkoposti">Sähköposti:</label>
+        <input type="text" id="sahkoposti" class="forced" name="sahkoposti">
+    
+        <label>Sukupuoli:</label>
+        <div class="forced">
+            <input type="radio" id="mies" name="sukupuoli" value="mies">
+            <label for="mies" style="display: inline;">Mies</label>
+            <input type="radio" id="nainen" name="sukupuoli" value="nainen">
+            <label for="nainen" style="display: inline;">Nainen</label>
+        </div>
+        <label>Kieli:</label>
+        <div class="forced">
+            <input type="checkbox" id="suomi" name="kieli" value="suomi" checked>
+            <label for="suomi" style="display: inline;">Suomi</label>
+            <input type="checkbox" id="muukieli" name="kieli" value="muukieli">
+            <label for="muukieli" style="display: inline;">Muu kuin suomi</label>
+        </div>
+        <label for="lisatiedot">Lisätietoja:</label>
+        <textarea id="lisatiedot" name="lisatiedot"></textarea>
+    
+        <input type="submit" value="Lähetä" onclick="checker(); event.preventDefault() ">
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
