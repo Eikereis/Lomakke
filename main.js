@@ -55,7 +55,7 @@ function checker() {
 
     function checkboxNradio() {
         let chek1 = false;
-        let chek2 = false
+        let chek2 = false;
         if(document.getElementById("mies").checked) {
             console.log("mies merkattu");
             chek1 = true;
@@ -74,7 +74,10 @@ function checker() {
         if(chek1==false) {
             console.error("fucked up");
         }
-        return chek1&&check2;
+        if(chek2==false) {
+            console.error("language not selected");
+        }
+        return [chek1, chek2];
     }
 
     if(emailVerify(email) == false) {
@@ -84,10 +87,15 @@ function checker() {
     }
 
     let validCheckbox = checkboxNradio();
-    if(!validCheckbox) {
+    if(!validCheckbox[0]) {
         document.getElementById("checkboxcheck").style.color="red";
     } else {
         document.getElementById("checkboxcheck").style.color="green";
+    }
+    if(!validCheckbox[1]) {
+        document.getElementById("checkboxcheck2").style.color="red";
+    } else {
+        document.getElementById("checkboxcheck2").style.color="green";
     }
 
     if(idVerify(ID) == false) {
@@ -126,15 +134,6 @@ function checker() {
         document.getElementById("maacheck").style.color="green";
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 
