@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        textarea {
+            height: 60px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            margin-top: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rekisteröitymislomake</h1>
+    <p>Siirry kentästä toiseen tab-näppäimellä.</p>
+    
+    <form>
+        <label for="kayttajaid" id="idcheck">Käyttäjä ID:</label>
+        <input type="text" id="kayttajaid" class="forced" name="kayttajaid" placeholder="Vähintään 6 numeroinen ID">
+        <p class="hidden" id="idWrong"></p>
+        
+        <label for="salasana" id="passcheck">Salasana:</label>
+        <input type="text" id="salasana" class="forced" name="salasana" placeholder="Vähintään kahdeksan kirjainta, yksi numero ja erikoismerkki">
+        <p class="hidden" id="passWrong"></p>
+
+        <label for="nimi" id="namecheck">Nimi:</label>
+        <input type="text" id="nimi" class="forced" name="nimi" placeholder="Esim: Jarkko Penttilä">
+        <p class="hidden" id="nameWrong"></p>
+
+        <label for="osoite"id="osoitecheck">Osoite:</label>
+        <input type="text" id="osoite" class="forced" name="osoite" placeholder="Esim: Otavankatu 4">
+        <p class="hidden" id="osoiteWrong"></p>
+
+        <label for="maa" id="maacheck">Maa:</label>
+        <select id="maa" class="forced" name="maa">
+            <option value="donttake">Valitse maa</option>
+            <option>Suomi</option>
+            <option>Belgia</option>
+            <option>Zimbabwe</option>
+            <option>yhdistynyt kuningaskunta</option>
+            <option>muu</option>
+        </select>
+        <p class="hidden" id="maaWrong"></p>
+
+        <label for="postinumero" id="posticheck">Postinumero:</label>
+        <input type="text" id="postinumero" class="forced" name="postinumero" placeholder="Esim: 00100">
+        <p class="hidden" id="postiWrong"></p>
+
+        <label for="sahkoposti" id="emailcheck">Sähköposti:</label>
+        <input type="text" id="sahkoposti" class="forced" name="sahkoposti" placeholder="JarkkoPenttila@yahoo.com">
+        <p class="hidden" id="emailWrong"></p>
+
+        <label id="checkboxcheck">Sukupuoli:</label>
+        <div class="forced">
+            <input type="radio" id="mies" name="sukupuoli" value="mies">
+            <label for="mies" style="display: inline;">Mies</label>
+            <input type="radio" id="nainen" name="sukupuoli" value="nainen">
+            <label for="nainen" style="display: inline;">Nainen</label>
+            <p class="hidden" id="genderWrong"></p>
+        </div>
+        <label id="checkboxcheck2">Kieli:</label>
+        <div class="forced">
+            <input type="checkbox" id="suomi" name="kieli" value="suomi" checked>
+            <label for="suomi" style="display: inline;" >Suomi</label>
+            <input type="checkbox" id="muukieli" name="kieli" value="muukieli">
+            <label for="muukieli" style="display: inline;">Muu kuin suomi</label>
+            <p class="hidden" id="langWrong"></p>
+        </div>
+        <label for="lisatiedot">Lisätietoja:</label>
+        <textarea id="lisatiedot" name="lisatiedot"></textarea>
+        
+        <input type="submit" value="Lähetä" onclick="event.preventDefault(); checker();">
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
